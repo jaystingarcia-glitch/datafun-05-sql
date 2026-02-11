@@ -17,7 +17,6 @@
 # logs/
 PRIVATE_NOTES.md
 PRIVATE-NOTES.md
-artifacts/duckdb/retail.duckdb
 
 # WHY: Temporary and swap files are machine-local noise and create meaningless diffs.
 *.swo
