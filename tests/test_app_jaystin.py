@@ -1,9 +1,12 @@
+# Purpose: Test Jaystin's shelter SQL pipeline (schema → data → sample queries)
+
 from pathlib import Path
 
 import duckdb
 
 
 def run_sql(con, filepath):
+    """Read and execute a SQL file."""
     sql = Path(filepath).read_text()
     print(f"\nRunning: {filepath}")
     con.execute(sql)
@@ -11,21 +14,50 @@ def run_sql(con, filepath):
 
 
 def main():
+    # Connect to (or create) the test database
     con = duckdb.connect("test_shelter.duckdb")
 
-    # 1. Create tables
+    # ---------------------------------------------------------
+    # 1. Run schema file (creates empty tables)
+    # ---------------------------------------------------------
     run_sql(con, "sql/duckdb/jaystin_shelter_schema.sql")
 
-    # 2. Show tables (proof they exist)
-    print("Tables:", con.execute("SHOW TABLES").fetchall())
+    # Show tables to confirm schema worked
+    print("\n=== Tables in Database ===")
+    print(con.execute("SHOW TABLES").fetchdf())
 
-    # 3. Load data
+    # ---------------------------------------------------------
+    # 2. Load CSV data into the tables
+    # ---------------------------------------------------------
     run_sql(con, "sql/duckdb/jaystin_shelter_data.sql")
 
-    # 4. Peek at the data (proof it loaded)
-    print("Adoption sample:", con.execute("SELECT * FROM adoption LIMIT 5").fetchall())
-    print("Branch sample:", con.execute("SELECT * FROM branch LIMIT 5").fetchall())
+    # ---------------------------------------------------------
+    # 3. Peek at the data
+    # ---------------------------------------------------------
+    print("\n=== Adoption Sample (first 5 rows) ===")
+    print(con.execute("SELECT * FROM adoption LIMIT 5").fetchdf())
 
+    print("\n=== Branch Sample (first 5 rows) ===")
+    print(con.execute("SELECT * FROM branch LIMIT 5").fetchdf())
+
+    # ---------------------------------------------------------
+    # 4. Run a sample query (count adoptions)
+    # ----------------------------------------------------------
+    print("\n=== Adoption Count ===")
+    print(con.execute("SELECT COUNT(*) AS adoption_count FROM adoption").fetchdf())
+
+    # ---------------------------------------------------------
+    # 5. Run the provided query to see adoptions by animal type
+    # ---------------------------------------------------------
+    print("\n=== Adoptions by Animal Type ===")
+    print(
+        con.execute(
+            "SELECT animal_type, COUNT(*) "
+            "AS adoption_count FROM adoption GROUP BY animal_type ORDER BY adoption_count DESC"
+        ).fetchdf()
+    )
+
+    # Close the connection
     con.close()
 
 
