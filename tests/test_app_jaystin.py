@@ -38,61 +38,90 @@ def main():
     print(con.execute("SELECT * FROM adoption LIMIT 5").fetchdf())
 
     # ---------------------------------------------------------
-    # 4. Run a sample query (count adoptions)
-    # ----------------------------------------------------------
-    print("\n=== Record Count ===")
-    print(con.execute("SELECT COUNT(*) AS total_records FROM adoption").fetchdf())
+    # 4. Total record count
+    # ---------------------------------------------------------
+    print("\n=== Total Records ===")
+    print(
+        con.execute("""
+        SELECT COUNT(*) AS total_records
+        FROM adoption
+    """).fetchdf()
+    )
 
     # ---------------------------------------------------------
-    # 5. Run the provided query to see adoptions by animal type
+    # 5. Adoptions by animal type
     # ---------------------------------------------------------
     print("\n=== Adoptions by Animal Type ===")
     print(
-        con.execute(
-            "SELECT animal_type, COUNT(*) "
-            "AS adoption_count FROM adoption GROUP BY animal_type ORDER BY adoption_count DESC"
-        ).fetchdf()
+        con.execute("""
+        SELECT animal_type, COUNT(*) AS adoption_count
+        FROM adoption
+        GROUP BY animal_type
+        ORDER BY adoption_count DESC
+    """).fetchdf()
     )
 
     # ---------------------------------------------------------
-    # 6. Run the provided query to see outcomes by type
+    # 6. Outcomes by type
     # ---------------------------------------------------------
     print("\n=== Outcomes by Type ===")
     print(
-        con.execute(
-            "SELECT outcome, COUNT(*) AS outcome_count "
-            "FROM adoption GROUP BY outcome ORDER BY outcome_count DESC"
-        ).fetchdf()
+        con.execute("""
+        SELECT outcome, COUNT(*) AS outcome_count
+        FROM adoption
+        GROUP BY outcome
+        ORDER BY outcome_count DESC
+    """).fetchdf()
     )
 
     # ---------------------------------------------------------
-    # 7. Run the provided query to calculate total fees collected
+    # 7. Total fees collected
     # ---------------------------------------------------------
     print("\n=== Total Fees Collected ===")
     print(
-        con.execute("SELECT SUM(fee) AS total_fees_collected FROM adoption").fetchdf()
+        con.execute("""
+        SELECT SUM(fee) AS total_fees_collected
+        FROM adoption
+    """).fetchdf()
     )
 
     # ---------------------------------------------------------
-    # 8. Run the provided query to calculate average adoption fee
+    # 8. Average adoption fee
     # ---------------------------------------------------------
     print("\n=== Average Adoption Fee ===")
     print(
-        con.execute("SELECT AVG(fee) AS average_adoption_fee FROM adoption").fetchdf()
+        con.execute("""
+        SELECT AVG(fee) AS average_adoption_fee
+        FROM adoption
+    """).fetchdf()
     )
 
     # ---------------------------------------------------------
-    # 9. Run the provided query to show adoption dates in descending order
+    # 9. Adoptions by date
     # ---------------------------------------------------------
     print("\n=== Adoptions by Date ===")
     print(
         con.execute("""
-     SELECT adopt_date, COUNT(*) AS adoption_count
-     FROM adoption
+        SELECT adopt_date, COUNT(*) AS adoption_count
+        FROM adoption
         GROUP BY adopt_date
         ORDER BY adopt_date
     """).fetchdf()
     )
+
+    # ---------------------------------------------------------
+    # 10. Average fee by animal type
+    # ---------------------------------------------------------
+    print("\n=== Average Fee by Animal Type ===")
+    print(
+        con.execute("""
+        SELECT animal_type, AVG(fee) AS average_fee
+        FROM adoption
+        GROUP BY animal_type
+        ORDER BY average_fee DESC
+    """).fetchdf()
+    )
+
     # Close the connection
     con.close()
 
