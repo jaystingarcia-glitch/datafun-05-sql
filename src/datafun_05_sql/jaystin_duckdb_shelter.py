@@ -13,9 +13,6 @@ Paths (relative to repo root):
    CSV:  data/retail/store.csv
    CSV:  data/retail/sale.csv
    DB:   artifacts/duckdb/retail.duckdb
-
-OBS:
-  Don't edit this file - it should remain a working example.
 """
 
 # === DECLARE IMPORTS ===
