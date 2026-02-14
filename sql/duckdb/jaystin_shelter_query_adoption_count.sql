@@ -1,3 +1,3 @@
--- Count how many adoptions there have been at the shelter
-SELECT COUNT(*) AS adoption_count
+-- Count total number of records in the adoption table to verify data load
+SELECT COUNT(*) AS total_records
 FROM adoption;

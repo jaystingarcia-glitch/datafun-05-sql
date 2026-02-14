@@ -12,11 +12,3 @@ CREATE TABLE adoption (
     fee DOUBLE,
     adopt_date DATE
 );
-
--- Create the branch table
-CREATE TABLE branch (
-    branch_id TEXT,
-    branch_name TEXT,
-    city TEXT,
-    system_name TEXT
-);
