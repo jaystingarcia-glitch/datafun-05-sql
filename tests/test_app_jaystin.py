@@ -73,6 +73,26 @@ def main():
         con.execute("SELECT SUM(fee) AS total_fees_collected FROM adoption").fetchdf()
     )
 
+    # ---------------------------------------------------------
+    # 8. Run the provided query to calculate average adoption fee
+    # ---------------------------------------------------------
+    print("\n=== Average Adoption Fee ===")
+    print(
+        con.execute("SELECT AVG(fee) AS average_adoption_fee FROM adoption").fetchdf()
+    )
+
+    # ---------------------------------------------------------
+    # 9. Run the provided query to show adoption dates in descending order
+    # ---------------------------------------------------------
+    print("\n=== Adoptions by Date ===")
+    print(
+        con.execute("""
+     SELECT adopt_date, COUNT(*) AS adoption_count
+     FROM adoption
+        GROUP BY adopt_date
+        ORDER BY adopt_date
+    """).fetchdf()
+    )
     # Close the connection
     con.close()
 
