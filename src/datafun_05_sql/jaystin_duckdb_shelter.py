@@ -1,20 +1,3 @@
-"""case_duckdb_retail.py - Project script (example).
-
-Author: Denise Case
-Date: 2026-02
-
-Purpose:
-- Read csv files into a DuckDB database.
-- Use Python to automate SQL scripts (stored in files).
-- Log the pipeline process.
-
-Paths (relative to repo root):
-   SQL:  sql/duckdb/*.sql
-   CSV:  data/retail/store.csv
-   CSV:  data/retail/sale.csv
-   DB:   artifacts/duckdb/retail.duckdb
-"""
-
 # === DECLARE IMPORTS ===
 
 import logging
@@ -33,71 +16,41 @@ LOG: logging.Logger = get_logger("P05", level="DEBUG")
 
 ROOT_DIR: Final[Path] = Path.cwd()
 
-DATA_DIR: Final[Path] = ROOT_DIR / "data" / "retail"
+DATA_DIR: Final[Path] = ROOT_DIR / "data" / "shelter"
 SQL_DIR: Final[Path] = ROOT_DIR / "sql" / "duckdb"
 ARTIFACTS_DIR: Final[Path] = ROOT_DIR / "artifacts" / "duckdb"
-DB_PATH: Final[Path] = ARTIFACTS_DIR / "retail.duckdb"
+DB_PATH: Final[Path] = ARTIFACTS_DIR / "shelter.duckdb"
 
-STORE_CSV: Final[Path] = DATA_DIR / "store.csv"
-SALE_CSV: Final[Path] = DATA_DIR / "sale.csv"
-
-# === DECLARE HELPER FUNCTION:  READ SQL FROM PATH ===
+# === DECLARE HELPER FUNCTION: READ SQL FROM PATH ===
 
 
 def read_sql(sql_path: Path) -> str:
-    """Read a SQL file from disk.
-
-    Every pathlib Path object has a built-in read_text() method.
-    We tell it to use UTF-8 encoding so that it works on all platforms.
-
-    Args:
-        sql_path (Path): Path to the SQL file.
-
-    Returns:
-        str: The contents of the SQL file as a string.
-    """
+    """Read a SQL file from disk using UTF-8 encoding."""
     return sql_path.read_text(encoding="utf-8")
 
 
-# === DECLARE HELPER FUNCTION:  RUN SQL ACTION (NO RESULTS) ===
+# === DECLARE HELPER FUNCTION: RUN SQL ACTION (NO RESULTS) ===
 
 
 def run_sql_script(con: duckdb.DuckDBPyConnection, sql_path: Path) -> None:
-    """Execute a SQL action script file (DDL, COPY, or cleanup).
-
-    DuckDB can run multiple SQL statements in a single execute() call.
-
-    Args:
-        con (duckdb.DuckDBPyConnection): DuckDB connection object.
-        sql_path (Path): Path to the SQL file to be executed.
-
-    Returns:
-        None
-    """
+    """Execute a SQL action script file (DDL or data load)."""
     LOG.info(f"RUN SQL script: {sql_path}")
     sql_text = read_sql(sql_path)
     con.execute(sql_text)
     LOG.info(f"DONE SQL script: {sql_path}")
 
 
-# === DECLARE HELPER FUNCTION:  RUN SQL QUERY (LOG RESULTS) ===
+# === DECLARE HELPER FUNCTION: RUN SQL QUERY (LOG RESULTS) ===
 
 
 def run_sql_query(con: duckdb.DuckDBPyConnection, sql_path: Path) -> None:
-    """Execute a SQL query script file (SELECT or other queries that return results).
-
-    Args:
-        con (duckdb.DuckDBPyConnection): DuckDB connection object.
-        sql_path (Path): Path to the SQL file to be executed.
-
-    Returns:
-        str: The query results as a formatted string.
-    """
+    """Execute a SQL query script file and log the results."""
     LOG.info("")
     LOG.info(f"RUN SQL query: {sql_path}")
-    sql_text = read_sql(sql_path)
 
+    sql_text = read_sql(sql_path)
     result = con.execute(sql_text)
+
     rows = result.fetchall()
     columns = [col[0] for col in result.description]
 
@@ -114,8 +67,8 @@ def run_sql_query(con: duckdb.DuckDBPyConnection, sql_path: Path) -> None:
 
 
 def main() -> None:
-    """Run the pipeline."""
-    log_header(LOG, "P05 Pipeline Example (DuckDB)")
+    """Run the shelter pipeline."""
+    log_header(LOG, "Jaystin Shelter Pipeline (DuckDB)")
 
     LOG.info("START main()")
     LOG.info(f"ROOT_DIR: {ROOT_DIR}")
@@ -123,38 +76,35 @@ def main() -> None:
     LOG.info(f"SQL_DIR: {SQL_DIR}")
     LOG.info(f"DB_PATH: {DB_PATH}")
 
-    # Make sure the artifacts directory exists
+    # Ensure artifacts directory exists
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Open a DuckDB connection
+    # Open DuckDB connection
     con = duckdb.connect(str(DB_PATH))
 
     try:
         # ----------------------------------------------------
-        # STEP 1: CLEAN (optional, common practice during development)
+        # STEP 1: CLEAN + CREATE TABLES
         # ----------------------------------------------------
-        run_sql_script(con, SQL_DIR / "case_retail_clean.sql")
+        run_sql_script(con, SQL_DIR / "jaystin_shelter_schema.sql")
 
         # ----------------------------------------------------
-        # STEP 2: BOOTSTRAP (create tables, load CSV data)
+        # STEP 2: LOAD CSV DATA
         # ----------------------------------------------------
-        run_sql_script(con, SQL_DIR / "case_retail_bootstrap.sql")
+        run_sql_script(con, SQL_DIR / "jaystin_shelter_data.sql")
 
         # ----------------------------------------------------
-        # STEP 3: RUN BASIC QUERIES
+        # STEP 3: RUN ALL QUERIES
         # ----------------------------------------------------
-        run_sql_query(con, SQL_DIR / "case_retail_query_store_count.sql")
-        run_sql_query(con, SQL_DIR / "case_retail_query_sales_count.sql")
-        run_sql_query(con, SQL_DIR / "case_retail_query_sales_aggregate.sql")
-        run_sql_query(con, SQL_DIR / "case_retail_query_sales_by_category.sql")
-
-        # ----------------------------------------------------
-        # STEP 4: RUN KPI QUERY (ACTION-DRIVEN)
-        # ----------------------------------------------------
-        run_sql_query(con, SQL_DIR / "case_retail_query_kpi_revenue.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_total_records.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_adoptions_by_animal.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_outcomes.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_total_fees.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_adopt_date.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_average_fee.sql")
+        run_sql_query(con, SQL_DIR / "jaystin_shelter_query_fees_by_animal.sql")
 
     finally:
-        # Regardless of success or failure, always close the connection
         con.close()
 
     LOG.info("END main()")

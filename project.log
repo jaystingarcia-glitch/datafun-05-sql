@@ -407,3 +407,344 @@
 2026-02-13 21:08:15 | INFO | P05 | S001, North Market, Duluth, North, 2, 165.0, 82.5
 2026-02-13 21:08:15 | INFO | P05 | S003, Central Plaza, Mankato, South, 1, 60.0, 60.0
 2026-02-13 21:08:15 | INFO | P05 | END main()
+2026-02-13 23:39:46 | INFO | P05 | === RUN START ===
+2026-02-13 23:39:46 | INFO | P05 | project=P05 Pipeline Example (DuckDB)
+2026-02-13 23:39:46 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-13 23:39:46 | INFO | P05 | python=3.14.2
+2026-02-13 23:39:46 | INFO | P05 | os=Windows 11
+2026-02-13 23:39:46 | INFO | P05 | shell=powershell
+2026-02-13 23:39:46 | INFO | P05 | cwd=.
+2026-02-13 23:39:46 | INFO | P05 | github_actions=False
+2026-02-13 23:39:46 | INFO | P05 | START main()
+2026-02-13 23:39:46 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-13 23:39:46 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\retail
+2026-02-13 23:39:46 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-13 23:39:46 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\retail.duckdb
+2026-02-13 23:39:46 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:39:47 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:39:47 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_fees.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_total_fees.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | total_fees_collected
+2026-02-13 23:39:47 | INFO | P05 | 405.0
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_average_fee.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_average_fee.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | average_adoption_fee
+2026-02-13 23:39:47 | INFO | P05 | 81.0
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_fees_by_animal.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_fees_by_animal.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | animal_type, average_fee
+2026-02-13 23:39:47 | INFO | P05 | Dog, 90.0
+2026-02-13 23:39:47 | INFO | P05 | Cat, 67.5
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoption_count.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_adoption_count.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | total_records
+2026-02-13 23:39:47 | INFO | P05 | 5
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_outcomes.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_outcomes.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | outcome, outcome_count
+2026-02-13 23:39:47 | INFO | P05 | Adoption, 4
+2026-02-13 23:39:47 | INFO | P05 | Foster, 1
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-13 23:39:47 | INFO | P05 | ====================================
+2026-02-13 23:39:47 | INFO | P05 | animal_type, adoption_count
+2026-02-13 23:39:47 | INFO | P05 | Dog, 3
+2026-02-13 23:39:47 | INFO | P05 | Cat, 2
+2026-02-13 23:39:47 | INFO | P05 | 
+2026-02-13 23:39:47 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_outcome.sql
+2026-02-13 23:41:44 | INFO | P05 | === RUN START ===
+2026-02-13 23:41:44 | INFO | P05 | project=P05 Pipeline Example (DuckDB)
+2026-02-13 23:41:44 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-13 23:41:44 | INFO | P05 | python=3.14.2
+2026-02-13 23:41:44 | INFO | P05 | os=Windows 11
+2026-02-13 23:41:44 | INFO | P05 | shell=powershell
+2026-02-13 23:41:44 | INFO | P05 | cwd=.
+2026-02-13 23:41:44 | INFO | P05 | github_actions=False
+2026-02-13 23:41:44 | INFO | P05 | START main()
+2026-02-13 23:41:44 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-13 23:41:44 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-13 23:41:44 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-13 23:41:44 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:41:44 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:41:44 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_fees.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_total_fees.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | total_fees_collected
+2026-02-13 23:41:44 | INFO | P05 | 405.0
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_average_fee.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_average_fee.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | average_adoption_fee
+2026-02-13 23:41:44 | INFO | P05 | 81.0
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_fees_by_animal.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_fees_by_animal.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | animal_type, average_fee
+2026-02-13 23:41:44 | INFO | P05 | Dog, 90.0
+2026-02-13 23:41:44 | INFO | P05 | Cat, 67.5
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoption_count.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_adoption_count.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | total_records
+2026-02-13 23:41:44 | INFO | P05 | 5
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_outcomes.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_outcomes.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | outcome, outcome_count
+2026-02-13 23:41:44 | INFO | P05 | Adoption, 4
+2026-02-13 23:41:44 | INFO | P05 | Foster, 1
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-13 23:41:44 | INFO | P05 | ====================================
+2026-02-13 23:41:44 | INFO | P05 | animal_type, adoption_count
+2026-02-13 23:41:44 | INFO | P05 | Dog, 3
+2026-02-13 23:41:44 | INFO | P05 | Cat, 2
+2026-02-13 23:41:44 | INFO | P05 | 
+2026-02-13 23:41:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_outcome.sql
+2026-02-13 23:43:36 | INFO | P05 | === RUN START ===
+2026-02-13 23:43:36 | INFO | P05 | project=Jaystin Shelter Pipeline (DuckDB)
+2026-02-13 23:43:36 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-13 23:43:36 | INFO | P05 | python=3.14.2
+2026-02-13 23:43:36 | INFO | P05 | os=Windows 11
+2026-02-13 23:43:36 | INFO | P05 | shell=powershell
+2026-02-13 23:43:36 | INFO | P05 | cwd=.
+2026-02-13 23:43:36 | INFO | P05 | github_actions=False
+2026-02-13 23:43:36 | INFO | P05 | START main()
+2026-02-13 23:43:36 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-13 23:43:36 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-13 23:43:36 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-13 23:43:36 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-13 23:43:36 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:43:36 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-13 23:43:36 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:43:36 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-13 23:43:36 | INFO | P05 | 
+2026-02-13 23:43:36 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_records.sql
+2026-02-15 14:43:02 | INFO | P05 | === RUN START ===
+2026-02-15 14:43:02 | INFO | P05 | project=Jaystin Shelter Pipeline (DuckDB)
+2026-02-15 14:43:02 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-15 14:43:02 | INFO | P05 | python=3.14.2
+2026-02-15 14:43:03 | INFO | P05 | os=Windows 11
+2026-02-15 14:43:03 | INFO | P05 | shell=powershell
+2026-02-15 14:43:03 | INFO | P05 | cwd=.
+2026-02-15 14:43:03 | INFO | P05 | github_actions=False
+2026-02-15 14:43:03 | INFO | P05 | START main()
+2026-02-15 14:43:03 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-15 14:43:03 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-15 14:43:03 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-15 14:43:03 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-15 14:43:03 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 14:43:03 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 14:43:03 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 14:43:03 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 14:43:03 | INFO | P05 | 
+2026-02-15 14:43:03 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_records.sql
+2026-02-15 19:07:18 | INFO | P05 | === RUN START ===
+2026-02-15 19:07:18 | INFO | P05 | project=Jaystin Shelter Pipeline (DuckDB)
+2026-02-15 19:07:18 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-15 19:07:18 | INFO | P05 | python=3.14.2
+2026-02-15 19:07:18 | INFO | P05 | os=Windows 11
+2026-02-15 19:07:18 | INFO | P05 | shell=powershell
+2026-02-15 19:07:18 | INFO | P05 | cwd=.
+2026-02-15 19:07:18 | INFO | P05 | github_actions=False
+2026-02-15 19:07:18 | INFO | P05 | START main()
+2026-02-15 19:07:18 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-15 19:07:18 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-15 19:07:18 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-15 19:07:18 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-15 19:07:18 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:07:18 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:07:18 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:07:18 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:07:18 | INFO | P05 | 
+2026-02-15 19:07:18 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_records.sql
+2026-02-15 19:07:18 | INFO | P05 | ====================================
+2026-02-15 19:07:18 | INFO | P05 | jaystin_shelter_query_total_records.sql
+2026-02-15 19:07:18 | INFO | P05 | ====================================
+2026-02-15 19:07:18 | INFO | P05 | total_records
+2026-02-15 19:07:18 | INFO | P05 | 5
+2026-02-15 19:07:18 | INFO | P05 | 
+2026-02-15 19:07:18 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:07:18 | INFO | P05 | ====================================
+2026-02-15 19:07:18 | INFO | P05 | jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:07:18 | INFO | P05 | ====================================
+2026-02-15 19:07:18 | INFO | P05 | animal_type, adoption_count
+2026-02-15 19:07:18 | INFO | P05 | Dog, 3
+2026-02-15 19:07:18 | INFO | P05 | Cat, 2
+2026-02-15 19:07:18 | INFO | P05 | 
+2026-02-15 19:07:18 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_outcome_types.sql
+2026-02-15 19:24:44 | INFO | P05 | === RUN START ===
+2026-02-15 19:24:44 | INFO | P05 | project=Jaystin Shelter Pipeline (DuckDB)
+2026-02-15 19:24:44 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-15 19:24:44 | INFO | P05 | python=3.14.2
+2026-02-15 19:24:44 | INFO | P05 | os=Windows 11
+2026-02-15 19:24:44 | INFO | P05 | shell=powershell
+2026-02-15 19:24:44 | INFO | P05 | cwd=.
+2026-02-15 19:24:44 | INFO | P05 | github_actions=False
+2026-02-15 19:24:44 | INFO | P05 | START main()
+2026-02-15 19:24:44 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-15 19:24:44 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-15 19:24:44 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-15 19:24:44 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:24:44 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:24:44 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_records.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_total_records.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | total_records
+2026-02-15 19:24:44 | INFO | P05 | 5
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | animal_type, adoption_count
+2026-02-15 19:24:44 | INFO | P05 | Dog, 3
+2026-02-15 19:24:44 | INFO | P05 | Cat, 2
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_outcomes.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_outcomes.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | outcome, outcome_count
+2026-02-15 19:24:44 | INFO | P05 | Adoption, 4
+2026-02-15 19:24:44 | INFO | P05 | Foster, 1
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_fees.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_total_fees.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | total_fees_collected
+2026-02-15 19:24:44 | INFO | P05 | 405.0
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adopt_date.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_adopt_date.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | adopt_date, adoption_count
+2026-02-15 19:24:44 | INFO | P05 | 2026-01-03, 1
+2026-02-15 19:24:44 | INFO | P05 | 2026-01-04, 1
+2026-02-15 19:24:44 | INFO | P05 | 2026-01-05, 1
+2026-02-15 19:24:44 | INFO | P05 | 2026-01-06, 1
+2026-02-15 19:24:44 | INFO | P05 | 2026-01-07, 1
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_average_fee.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | jaystin_shelter_query_average_fee.sql
+2026-02-15 19:24:44 | INFO | P05 | ====================================
+2026-02-15 19:24:44 | INFO | P05 | average_adoption_fee
+2026-02-15 19:24:44 | INFO | P05 | 81.0
+2026-02-15 19:24:44 | INFO | P05 | 
+2026-02-15 19:24:44 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_average_fees_by_animal.sql
+2026-02-15 19:25:58 | INFO | P05 | === RUN START ===
+2026-02-15 19:25:58 | INFO | P05 | project=Jaystin Shelter Pipeline (DuckDB)
+2026-02-15 19:25:58 | INFO | P05 | repo_dir=datafun-05-sql
+2026-02-15 19:25:58 | INFO | P05 | python=3.14.2
+2026-02-15 19:25:58 | INFO | P05 | os=Windows 11
+2026-02-15 19:25:58 | INFO | P05 | shell=powershell
+2026-02-15 19:25:58 | INFO | P05 | cwd=.
+2026-02-15 19:25:58 | INFO | P05 | github_actions=False
+2026-02-15 19:25:58 | INFO | P05 | START main()
+2026-02-15 19:25:58 | INFO | P05 | ROOT_DIR: C:\Users\jayst\Repos\datafun-05-sql
+2026-02-15 19:25:58 | INFO | P05 | DATA_DIR: C:\Users\jayst\Repos\datafun-05-sql\data\shelter
+2026-02-15 19:25:58 | INFO | P05 | SQL_DIR: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb
+2026-02-15 19:25:58 | INFO | P05 | DB_PATH: C:\Users\jayst\Repos\datafun-05-sql\artifacts\duckdb\shelter.duckdb
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:25:58 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_schema.sql
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:25:58 | INFO | P05 | DONE SQL script: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_data.sql
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_records.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_total_records.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | total_records
+2026-02-15 19:25:58 | INFO | P05 | 5
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_adoptions_by_animal.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | animal_type, adoption_count
+2026-02-15 19:25:58 | INFO | P05 | Dog, 3
+2026-02-15 19:25:58 | INFO | P05 | Cat, 2
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_outcomes.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_outcomes.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | outcome, outcome_count
+2026-02-15 19:25:58 | INFO | P05 | Adoption, 4
+2026-02-15 19:25:58 | INFO | P05 | Foster, 1
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_total_fees.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_total_fees.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | total_fees_collected
+2026-02-15 19:25:58 | INFO | P05 | 405.0
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_adopt_date.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_adopt_date.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | adopt_date, adoption_count
+2026-02-15 19:25:58 | INFO | P05 | 2026-01-03, 1
+2026-02-15 19:25:58 | INFO | P05 | 2026-01-04, 1
+2026-02-15 19:25:58 | INFO | P05 | 2026-01-05, 1
+2026-02-15 19:25:58 | INFO | P05 | 2026-01-06, 1
+2026-02-15 19:25:58 | INFO | P05 | 2026-01-07, 1
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_average_fee.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_average_fee.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | average_adoption_fee
+2026-02-15 19:25:58 | INFO | P05 | 81.0
+2026-02-15 19:25:58 | INFO | P05 | 
+2026-02-15 19:25:58 | INFO | P05 | RUN SQL query: C:\Users\jayst\Repos\datafun-05-sql\sql\duckdb\jaystin_shelter_query_fees_by_animal.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | jaystin_shelter_query_fees_by_animal.sql
+2026-02-15 19:25:58 | INFO | P05 | ====================================
+2026-02-15 19:25:58 | INFO | P05 | animal_type, average_fee
+2026-02-15 19:25:58 | INFO | P05 | Dog, 90.0
+2026-02-15 19:25:58 | INFO | P05 | Cat, 67.5
+2026-02-15 19:25:58 | INFO | P05 | END main()
